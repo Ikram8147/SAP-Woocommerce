@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script> <!-- Use bootstrap.bundle.min.js -->
+    
+        <!-- Flatpickr CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+    
+        <!-- Flatpickr JS -->
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    
+        <!-- <link href="https://fonts.cdnfonts.com/css/pp-neue-montreal" rel="stylesheet"> -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    
+    <div class="container-fluid signin d-flex align-items-center justify-content-center">
+        <div class="row w-100">
+            <!-- Left Section (Login Form) -->
+            <div class="col-lg-6 d-flex justify-content-center align-items-center vh-100">
+                <div class="login-section card text-center rounded-4 shadow">
+                    <h3>Join Us Today!</h3>
+                    <p>After registering, you'll receive a confirmation email with a link to verify your account.</p>
+                    <form class="login-form">
+                        <div class="row mb-3">
+                            <div class="col-6 ps-0">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label d-flex ms-1">First name</label>
+                                    <div class="input-group rounded-4">
+                                        <input type="text" class="form-control" id="firstName" placeholder="Jonathan">
+                                        <span class="input-group-text clear-icon" data-target="#firstName" style="cursor: pointer;">
+                                            <img src="assets/icons/close-icon.svg" alt="close">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 p-0">
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label d-flex ms-1">Last name</label>
+                                    <div class="input-group rounded-4">
+                                        <input type="text" class="form-control" id="lastName" placeholder="Smith">
+                                        <span class="input-group-text clear-icon" data-target="#lastName" style="cursor: pointer;">
+                                            <img src="assets/icons/close-icon.svg" alt="close">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="form-group mb-3">
+                            <label for="email" class="form-label d-flex ms-1">Email</label>
+                            <div class="input-group">
+                                <input type="email" class="form-control" id="email" placeholder="Jonhmail@gmail.com">
+                                <span class="input-group-text clear-icon" data-target="#email" style="cursor: pointer;">
+                                    <img src="assets/icons/close-icon.svg" alt="close">
+                                </span>
+                            </div>
+                        </div>
+                    
+                        <div class="form-group mb-3">
+                            <label for="password" class="form-label d-flex ms-1">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                                <span class="input-group-text toggle-password" data-target="#password" style="cursor: pointer;">
+                                    <img src="assets/icons/visibility_slash.svg" alt="Password-icon">
+                                </span>
+                            </div>
+                        </div>
+                    
+                        <!-- Confirm Password Field -->
+                        <div class="form-group mb-3">
+                            <label for="confirmPassword" class="form-label d-flex ms-1">Confirm Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                                <span class="input-group-text toggle-password" data-target="#confirmPassword" style="cursor: pointer;">
+                                    <img src="assets/icons/visibility_slash.svg" alt="Password-icon">
+                                </span>
+                            </div>
+                        </div>
+                    
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#resetPasswordModal">
+                            <button type="submit" class="btn btn-continue btn-block w-100">Save</button>
+                        </a>
+                    </form>
+                </div>
+            </div>
+    
+            <!-- Right Section (Image Background & Buttons Overlay) -->
+            <div class="col-lg-6 d-none d-md-flex justify-content-center align-items-center">
+                <div class="right-side">
+                    <!-- Text Overlay -->
+                    <div class="text-overlay">
+                        Uninterrupted Service Today!
+                    </div>
+    
+                    <!-- Button Overlay -->
+                    <div class="btn-container">
+                        <button class="btn btn-right-side">
+                            <img src="assets/icons/recently-ordered-items.svg
+                            " alt=""> Get shop today
+                        </button>
+                        <button class="btn btn-right-side">
+                            <img src="assets/icons/tick-01.svg" alt=""> Payment success
+                        </button>
+                        <button class="btn btn-right-side">
+                            <img src="assets/icons/orders.svg" alt=""> Your order number 3541
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Modal for Password Reset -->
+<div class="modal fade" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4">
+        <div class="modal-header">
+            <h5 class="modal-title" id="resetPasswordLabel">Almost done</h5>
+            <!-- <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body text-center">
+            <p>We've sent an email to <a href="">johnmail@mail.com</a></p>
+           
+           <p>Open it up to continue to your account</p>
+        </div>
+    </div>
+</div>
+</div>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="main.js"></script>
+    <script>
+        // Clear input field when close icon is clicked
+        document.querySelectorAll('.clear-icon').forEach(function(clearIcon) {
+            clearIcon.addEventListener('click', function() {
+                const targetInput = document.querySelector(this.getAttribute('data-target'));
+                if (targetInput) {
+                    targetInput.value = ''; // Clear the input field
+                }
+            });
+        });
+    
+        // Toggle password visibility for both password and confirm password
+        document.querySelectorAll('.toggle-password').forEach(function(toggleIcon) {
+            toggleIcon.addEventListener('click', function() {
+                const targetInput = document.querySelector(this.getAttribute('data-target'));
+                if (targetInput) {
+                    if (targetInput.type === 'password') {
+                        targetInput.type = 'text';
+                        this.innerHTML = '<img src="assets/icons/eye.svg" alt="Password-icon">';
+                    } else {
+                        targetInput.type = 'password';
+                        this.innerHTML = '<img src="assets/icons/visibility_slash.svg" alt="Password-icon">';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Details</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script> <!-- Use bootstrap.bundle.min.js -->
+
+    <!-- Flatpickr CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- <link href="https://fonts.cdnfonts.com/css/pp-neue-montreal" rel="stylesheet"> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container-fluid g-0">
+        <div class="row">
+            <!-- Sidebar with collapse -->
+            <nav class="col-md-2 bg-light p-0">
+                <div class=" d-flex flex-column">
+
+                    <div class="d-flex">
+                        <div class="topbar-sm-left logo d-md-none">
+                            <img src="assets/images/Frame 2072750385.svg" alt="Logo">
+                        </div>
+
+                        <div class="topbar-sm-right ms-auto d-md-none">
+                            <img src="assets/icons/sm-bell.svg" alt="bell">
+
+                            <!-- Toggler button for medium screens -->
+                            <button class="navbar-toggler d-md-none p-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class=" navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar content -->
+                    <div class="collapse d-md-block dashboard-menu" id="sidebarMenu">
+
+                        <div class="user-id d-flex">
+                            <a class="" href="#"><img class="user_img"
+                                    src="assets/images/sample_avatar_mo_taungw.png">Jonathan Smith</a>
+                        </div>
+
+                        <div>
+                            <div class="items">
+                                <a href="index.html" class="nav-link " data-target="dashboard"><svg class="sidebar-icon"
+                                        width="16" height="16" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.5005 14.1667C11.8342 14.6853 10.959 15 10.0005 15C9.04195 15 8.16676 14.6853 7.50049 14.1667"
+                                            stroke="#013871" stroke-width="1.5" stroke-linecap="round" />
+                                        <path
+                                            d="M1.95982 11.0112C1.66563 9.09689 1.51854 8.13972 1.88046 7.29117C2.24238 6.44262 3.04535 5.86205 4.65127 4.70091L5.85115 3.83335C7.8489 2.38891 8.84778 1.66669 10.0003 1.66669C11.1529 1.66669 12.1517 2.38891 14.1495 3.83335L15.3494 4.70091C16.9553 5.86205 17.7583 6.44262 18.1202 7.29117C18.4821 8.13972 18.335 9.09689 18.0408 11.0112L17.79 12.6437C17.3729 15.3575 17.1644 16.7143 16.1912 17.5239C15.2179 18.3334 13.795 18.3334 10.9493 18.3334H9.05131C6.2056 18.3334 4.78275 18.3334 3.80949 17.5239C2.83623 16.7143 2.62772 15.3575 2.21068 12.6437L1.95982 11.0112Z"
+                                            stroke="#013871" stroke-width="1.5" stroke-linejoin="round" />
+                                    </svg>Dashboard</a>
+                                <a href="orders.html" class="nav-link" data-target="orders"><svg class="sidebar-icon" width="16"
+                                        height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M2.8939 11.2521L2.11858 6.62371C1.99246 5.87087 1.92941 5.49444 2.12358 5.24722C2.31775 5 2.67645 5 3.39386 5H12.6061C13.3235 5 13.6823 5 13.8764 5.24722C14.0706 5.49444 14.0075 5.87087 13.8814 6.62371L13.1061 11.2521C12.8327 12.8842 12.696 13.7003 12.1546 14.1835C11.6132 14.6667 10.8356 14.6667 9.28025 14.6667H6.71975C5.16443 14.6667 4.38676 14.6667 3.84539 14.1835C3.30402 13.7003 3.16731 12.8842 2.8939 11.2521Z"
+                                            stroke="#013871" />
+                                        <path
+                                            d="M4.6665 5.00001V4.66668C4.6665 2.82573 6.15889 1.33334 7.99984 1.33334C9.84079 1.33334 11.3332 2.82573 11.3332 4.66668V5.00001"
+                                            stroke="#013871" />
+                                        <path d="M3 11.6667H13" stroke="#013871" />
+                                    </svg>Orders</a>
+                                <a href="addresses.html" class="nav-link" data-target="addresses"><svg class="sidebar-icon"
+                                        width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.66683 6.00001C9.66683 6.92048 8.92064 7.66668 8.00016 7.66668C7.07969 7.66668 6.3335 6.92048 6.3335 6.00001C6.3335 5.07954 7.07969 4.33334 8.00016 4.33334C8.92064 4.33334 9.66683 5.07954 9.66683 6.00001Z"
+                                            stroke="#013871" />
+                                        <path
+                                            d="M8.83843 11.6624C8.61358 11.879 8.31304 12 8.00026 12C7.68749 12 7.38695 11.879 7.1621 11.6624C5.10303 9.6672 2.34362 7.43837 3.6893 4.2025C4.4169 2.45289 6.16346 1.33334 8.00026 1.33334C9.83707 1.33334 11.5836 2.45289 12.3112 4.2025C13.6552 7.43429 10.9026 9.67408 8.83843 11.6624Z"
+                                            stroke="#013871" />
+                                        <path
+                                            d="M12 13.3333C12 14.0697 10.2091 14.6667 8 14.6667C5.79086 14.6667 4 14.0697 4 13.3333"
+                                            stroke="#013871" stroke-linecap="round" />
+                                    </svg>Addresses</a>
+                                <a href="Recenlty-ordered-items.html" class="nav-link" data-target="recently"><svg class="sidebar-icon" width="16"
+                                        height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M7.86736 4.32632L8.85774 3.33593C9.97289 2.22079 11.4328 1.75824 12.9779 1.68265C13.5789 1.65325 13.8794 1.63855 14.1203 1.87951C14.3613 2.12046 14.3466 2.42095 14.3172 3.02192C14.2416 4.56699 13.779 6.02694 12.6639 7.14208L11.6735 8.13246C10.8579 8.94807 10.626 9.17996 10.7972 10.0647C10.9662 10.7405 11.1298 11.3949 10.6384 11.8863C10.0423 12.4823 9.49858 12.4823 8.90253 11.8863L4.11355 7.0973C3.5175 6.50124 3.51748 5.95752 4.11355 5.36145C4.60495 4.87005 5.25936 5.03362 5.93515 5.20258C6.81987 5.37381 7.05176 5.14192 7.86736 4.32632Z"
+                                            stroke="#013871" stroke-linejoin="round" />
+                                        <path d="M11.3304 4.66666H11.3364" stroke="#013871" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M1.6665 14.3333L4.99984 11" stroke="#013871" stroke-linecap="round" />
+                                        <path d="M5.6665 14.3333L6.99984 13" stroke="#013871" stroke-linecap="round" />
+                                        <path d="M1.6665 10.3333L2.99984 9" stroke="#013871" stroke-linecap="round" />
+                                    </svg>Recently ordered items</a>
+                                <a href="account-details.html" class="nav-link active" data-target="account"><svg class="sidebar-icon" width="16"
+                                        height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M4.38505 10.3211C3.44187 10.8827 0.96891 12.0294 2.47511 13.4644C3.21087 14.1653 4.03033 14.6667 5.06058 14.6667H10.9394C11.9697 14.6667 12.7891 14.1653 13.5249 13.4644C15.0311 12.0294 12.5581 10.8827 11.615 10.3211C9.40321 9.00409 6.59679 9.00409 4.38505 10.3211Z"
+                                            stroke="#013871" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M11 4.33333C11 5.99018 9.65685 7.33333 8 7.33333C6.34315 7.33333 5 5.99018 5 4.33333C5 2.67647 6.34315 1.33333 8 1.33333C9.65685 1.33333 11 2.67647 11 4.33333Z"
+                                            stroke="#013871" />
+                                    </svg>Account</a>
+                                <a href="account-statement.html" class="nav-link" data-target="download"><svg class="sidebar-icon" width="16"
+                                        height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M14.0002 5.55556C13.3834 4.68777 12.5766 4 11.319 4C5.64556 4 8.61308 13.6667 3.3335 13.6667"
+                                            stroke="#013871" stroke-linecap="round" />
+                                        <path
+                                            d="M14 14H6.66667C4.46678 14 3.36683 14 2.68342 13.3166C2 12.6332 2 11.5332 2 9.33333V2"
+                                            stroke="#013871" stroke-linecap="round" />
+                                    </svg>Download accounts statement</a>
+                                <div class="container bottom-items-container">
+                                    <div class="bottom-items w-25">
+                                        
+                                        <a class="log-out nav-link rounded" href="#"><svg class="sidebar-icon"
+                                                width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M8.75 13.0657C8.46437 13.1049 8.17221 13.1251 7.875 13.1251C4.56129 13.1251 1.875 10.6067 1.875 7.50012C1.875 4.39352 4.56129 1.87512 7.875 1.87512C8.17221 1.87512 8.46437 1.89538 8.75 1.93451"
+                                                    stroke="#14171F" stroke-linecap="round" />
+                                                <path
+                                                    d="M13.125 7.50012L6.875 7.50012M13.125 7.50012C13.125 7.93776 11.8786 8.75542 11.5625 9.06262M13.125 7.50012C13.125 7.06248 11.8786 6.24483 11.5625 5.93762"
+                                                    stroke="#14171F" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>Log Out</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </nav>
+
+            <div class="col-md-10 p-0">
+                <div class="main">
+                    <!-- Top Navbar Start -->
+                    <nav class="top-nav navbar navbar-expand px-3  border-bottom">
+                        </li>
+                        <div class="top-search-bar mx-2 d-none d-md-block">
+                            <input type="text" placeholder="Search">
+                            <img src="assets/icons/search.svg" alt="Search-icon">
+                        </div>
+                        </li>
+
+                        <div class="ms-auto d-flex">
+                            <ul class="navbar-nav">
+
+                                <li class="nav-item">
+                                    <a class="nav-link d-none d-md-block" href="#"><img src="assets/icons/message.svg"
+                                            alt=""> </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-none d-md-block" href="#"><img src="assets/icons/bell.svg"
+                                            alt=""> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <!-- Top Navbar End -->
+                     <div class="container Account-details">
+                        <h2 class="Account-details-heading mt-3">Account Details</h2>
+                        <div class="user-account-details card rounded-4 mb-3 p-3 pb-2">
+                            <div class="d-flex mb-2">
+                                <div class="user-details d-flex">
+                                    <img src="assets/icons/user-image-account-details.svg"  alt="">
+                                    <div class="user-info mt-3 ms-3">
+                                        <p class="p-black">Jonathan Smith</p>
+                                        <p class="p-grey">United Kingdom</p>
+                                    </div>
+                                </div>
+                                <div class="account-buttons d-flex flex-column flex-md-row justify-content-md-between align-items-start justify-content-end ms-auto mt-0">
+                                    <button type="button" class="btn btn-light Account-details edit-btn">Edit&nbsp;<img src="assets/icons/pen.svg" alt=""></button>
+                                    <button type="button" class="btn btn-light Account-details Delete-btn ms-md-2 mt-2 mt-md-0">Delete</button>
+                                </div>
+                               
+                            </div>
+                        </div>
+
+                        <div class="user-account-details card rounded-4 mb-3 p-3 pb-2">
+                            <div class="d-flex mb-2">
+                                <h4 class="card-heading mb-3 ">Personal Information</h4>
+                                <div class="account-buttons d-flex ms-auto">
+                                    <button type="button" class="btn btn-light Account-details edit-btn">Edit&nbsp;<img src="assets/icons/pen.svg" alt=""></button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-12 mb-4 p-0">
+                                    <div class="user-name">
+                                        <p class="p-grey">First Name</p>
+                                        <p class="p-black">Jonathan</p>
+                                    </div>
+
+                                    <div>
+                                        <p class="p-grey">Email Addrss</p>
+                                        <p class="p-black">johnmail@gmail.com
+
+                                        </p>
+                                    </div>
+                                    </div>
+                                  
+    
+                                <div class="col-md-4 col-12 p-0">
+                                    <div class="user-name">
+                                        <p class="p-grey">Last Name</p>
+                                        <p class="p-black">Smith</p> 
+                                    </div>
+
+                                    <div>
+                                        <p class="p-grey">Phone</p>
+                                        <p class="p-black">+09 345 346 46</p> 
+                                    </div>
+                                   
+                                </div>   
+                            </div>
+                        </div>
+
+
+                        <div class="user-account-details card rounded-4 mb-3 p-3 pb-4">
+                            <div class="d-flex mb-2">
+                                <h4 class="card-heading mb-3 ">Personal Information</h4>
+                                <div class="account-buttons d-flex ms-auto">
+                                    <button type="button" class="btn btn-light Account-details save-btn">Save</button>
+                                </div>
+                            </div>
+                            <form action="">
+                                <div class="row">
+                                    <div class="col-md-4 col-12 mb-4 p-0">
+                                        <div class="user-name mb-4">
+                                            <p class="p-grey">Country</p>
+                                            <input type="text" name="Country" id="" placeholder="United Kingdom"  class="user-info-form">
+                                        </div>
+    
+                                        <div>
+                                            <p class="p-grey">Postal Code</p>
+                                            <input type="email" name="Postal Code" id="" placeholder="ERT 2354"  class="user-info-form">
+                                        </div>
+                                        </div>
+                                      
+        
+                                    <div class="col-md-4 col-12 p-0">
+                                        <div class="user-name mb-4">
+                                            <p class="p-grey">City/State</p>
+                                            <input type="text" name="City/State" id="" placeholder="Leeds, East London"  class="user-info-form">
+                                        </div>
+    
+                                        <div>
+                                            <p class="p-grey">TAX ID</p>
+                                            <input type="tel" name="TAX ID" id="" placeholder="AS45645756"  class="user-info-form">
+                                        </div>
+                                       
+                                    </div>   
+                                </div>
+                            </form>
+                            
+                        </div>
+                     </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

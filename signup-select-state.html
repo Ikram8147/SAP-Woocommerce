@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select State Page</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script> <!-- Use bootstrap.bundle.min.js -->
+
+    <!-- Flatpickr CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- <link href="https://fonts.cdnfonts.com/css/pp-neue-montreal" rel="stylesheet"> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container-fluid signin ">
+        <div class="row">
+            <!-- Left Section (Login Form) -->
+            <div class="col-lg-6 d-flex align-items-center justify-content-center vh-100">
+                <div class="profile-setup rounded-4">
+                    <div class="profile-setup-heading text-center ">
+                        <h3 class="almost-done-text">You’re almost done</h3>
+                        <p>Set up your profile to introduce yourself and share more about who you are</p>
+                    </div>
+                    <!-- Navigation Controls -->
+                    <div class="navigation-controls mb-3">
+                        <a href="signup-select-country.html">
+                            <button type="button" class="btn ">
+                                <img src="assets/icons/previous-arow-button.svg" alt="">
+                            </button>
+                        </a>
+
+
+                        <!-- Pagination Dots -->
+                        <div class="pagination-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span class="active"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <a href="signup-select-city.html">
+                            <button type="button" class="btn">
+                                <img src="assets/icons/next-arow-button.svg" alt="">
+                            </button>
+                        </a>
+
+                    </div>
+
+                    
+                    <div class="row create-profile rounded-4">
+                        <div class="user-info ps-3 mt-3">
+                            <h4>State</h4>
+                            <p>Select your State</p>
+                        </div>
+                        <form action="" class="signup-form px-2 py-1" >
+                            <div class="dropdown m-2">
+                                
+                                <div class="dropdown">
+                                    <select class="form-select custom-select-dropdown" aria-label="Select Country">
+                                       
+                                        <option selected>East Landon</option>
+                                        <option value="United States">---</option>
+                                        <option value="Uruguay">---</option>
+                                        <option value="Uzbekistan">---</option>
+                                    </select>
+                            </div>
+                        </form>
+                        
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- Right Section (Image Background & Buttons Overlay) -->
+            
+        </div>
+        <div class="col-lg-6 d-none d-md-flex justify-content-center align-items-center">
+            <div class="right-side">
+                <!-- Text Overlay -->
+                <div class="text-overlay">
+                    Uninterrupted Service Today!
+                </div>
+
+                <!-- Button Overlay -->
+                <div class="btn-container">
+                    <button class="btn btn-right-side">
+                        <img src="assets/icons/recently-ordered-items.svg
+                        " alt=""> Get shop today
+                    </button>
+                    <button class="btn btn-right-side">
+                        <img src="assets/icons/tick-01.svg" alt=""> Payment success
+                    </button>
+                    <button class="btn btn-right-side">
+                        <img src="assets/icons/orders.svg" alt=""> Your order number 3541
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

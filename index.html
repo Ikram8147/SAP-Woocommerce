@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Admin Dashboard</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <link href="https://fonts.cdnfonts.com/css/pp-neue-montreal" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="main.js"></script> -->
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+  
+
+    <!-- Sidebar -->
+    <div class="container-fluid g-0 ">
+        <div class="row g-0">
+           
+            <nav class="col-md-2 bg-light p-0">
+                <div class=" d-flex flex-column">
+                    <div class="d-flex align-items-center">
+                        <!-- Logo on small screens only -->
+                        <div class="topbar-sm-left logo d-md-none">
+                            <img src="assets/images/Frame 2072750385.svg" alt="Logo">
+                        </div>
+                    
+                        <!-- Right side icons and dropdown for small screens -->
+                        <div class="topbar-sm-right ms-auto d-flex align-items-center gap-2 d-md-none">
+                            <!-- Bell Icon -->
+                            <img src="assets/icons/bell.svg" alt="bell">
+                    
+                            <!-- Dropdown for user avatar (moved before toggler) -->
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img class="user_img mt-2" src="assets/images/sample_avatar_mo_taungw.png" alt="User Avatar" style="width: 48px; height: auto; border-radius: 50%;">
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                    <li class="mb-3">
+                                        <a class="dropdown-item" href="#">
+                                            <img class="me-2" src="assets/images/sample_avatar_mo_taungw.png" alt="" style="width: 30px; height: 30px; border-radius: 50%;">Jonathan Smith
+                                        </a>
+                                    </li>
+                                    <hr class="mx-3">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <img class="mb-1 me-2" src="assets/icons/logout.svg" alt="">
+                                            Log Out
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <!-- Toggler button for medium screens -->
+                            <button class="navbar-toggler d-md-none p-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Sidebar content -->
+                    <div class="collapse d-md-block dashboard-menu p-2 " id="sidebarMenu">
+                        
+                            <div class="items mt-2">
+                                <a href="#" class="nav-link active" data-target="dashboard"><svg class="sidebar-icon"
+                                        width="16" height="16" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.5005 14.1667C11.8342 14.6853 10.959 15 10.0005 15C9.04195 15 8.16676 14.6853 7.50049 14.1667"
+                                            stroke="#013871" stroke-width="1.5" stroke-linecap="round" />
+                                        <path
+                                            d="M1.95982 11.0112C1.66563 9.09689 1.51854 8.13972 1.88046 7.29117C2.24238 6.44262 3.04535 5.86205 4.65127 4.70091L5.85115 3.83335C7.8489 2.38891 8.84778 1.66669 10.0003 1.66669C11.1529 1.66669 12.1517 2.38891 14.1495 3.83335L15.3494 4.70091C16.9553 5.86205 17.7583 6.44262 18.1202 7.29117C18.4821 8.13972 18.335 9.09689 18.0408 11.0112L17.79 12.6437C17.3729 15.3575 17.1644 16.7143 16.1912 17.5239C15.2179 18.3334 13.795 18.3334 10.9493 18.3334H9.05131C6.2056 18.3334 4.78275 18.3334 3.80949 17.5239C2.83623 16.7143 2.62772 15.3575 2.21068 12.6437L1.95982 11.0112Z"
+                                            stroke="#013871" stroke-width="1.5" stroke-linejoin="round" />
+                                    </svg>Dashboard</a>
+                                <a href="orders.html" class="nav-link" data-target="orders"><svg class="sidebar-icon"
+                                        width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M2.8939 11.2521L2.11858 6.62371C1.99246 5.87087 1.92941 5.49444 2.12358 5.24722C2.31775 5 2.67645 5 3.39386 5H12.6061C13.3235 5 13.6823 5 13.8764 5.24722C14.0706 5.49444 14.0075 5.87087 13.8814 6.62371L13.1061 11.2521C12.8327 12.8842 12.696 13.7003 12.1546 14.1835C11.6132 14.6667 10.8356 14.6667 9.28025 14.6667H6.71975C5.16443 14.6667 4.38676 14.6667 3.84539 14.1835C3.30402 13.7003 3.16731 12.8842 2.8939 11.2521Z"
+                                            stroke="#013871" />
+                                        <path
+                                            d="M4.6665 5.00001V4.66668C4.6665 2.82573 6.15889 1.33334 7.99984 1.33334C9.84079 1.33334 11.3332 2.82573 11.3332 4.66668V5.00001"
+                                            stroke="#013871" />
+                                        <path d="M3 11.6667H13" stroke="#013871" />
+                                    </svg>Orders</a>
+                                <a href="addresses.html" class="nav-link" data-target="addresses"><svg
+                                        class="sidebar-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.66683 6.00001C9.66683 6.92048 8.92064 7.66668 8.00016 7.66668C7.07969 7.66668 6.3335 6.92048 6.3335 6.00001C6.3335 5.07954 7.07969 4.33334 8.00016 4.33334C8.92064 4.33334 9.66683 5.07954 9.66683 6.00001Z"
+                                            stroke="#013871" />
+                                        <path
+                                            d="M8.83843 11.6624C8.61358 11.879 8.31304 12 8.00026 12C7.68749 12 7.38695 11.879 7.1621 11.6624C5.10303 9.6672 2.34362 7.43837 3.6893 4.2025C4.4169 2.45289 6.16346 1.33334 8.00026 1.33334C9.83707 1.33334 11.5836 2.45289 12.3112 4.2025C13.6552 7.43429 10.9026 9.67408 8.83843 11.6624Z"
+                                            stroke="#013871" />
+                                        <path
+                                            d="M12 13.3333C12 14.0697 10.2091 14.6667 8 14.6667C5.79086 14.6667 4 14.0697 4 13.3333"
+                                            stroke="#013871" stroke-linecap="round" />
+                                    </svg>Addresses</a>
+                                <a href="Recenlty-ordered-items.html" class="nav-link" data-target="recently"><svg
+                                        class="sidebar-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M7.86736 4.32632L8.85774 3.33593C9.97289 2.22079 11.4328 1.75824 12.9779 1.68265C13.5789 1.65325 13.8794 1.63855 14.1203 1.87951C14.3613 2.12046 14.3466 2.42095 14.3172 3.02192C14.2416 4.56699 13.779 6.02694 12.6639 7.14208L11.6735 8.13246C10.8579 8.94807 10.626 9.17996 10.7972 10.0647C10.9662 10.7405 11.1298 11.3949 10.6384 11.8863C10.0423 12.4823 9.49858 12.4823 8.90253 11.8863L4.11355 7.0973C3.5175 6.50124 3.51748 5.95752 4.11355 5.36145C4.60495 4.87005 5.25936 5.03362 5.93515 5.20258C6.81987 5.37381 7.05176 5.14192 7.86736 4.32632Z"
+                                            stroke="#013871" stroke-linejoin="round" />
+                                        <path d="M11.3304 4.66666H11.3364" stroke="#013871" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M1.6665 14.3333L4.99984 11" stroke="#013871" stroke-linecap="round" />
+                                        <path d="M5.6665 14.3333L6.99984 13" stroke="#013871" stroke-linecap="round" />
+                                        <path d="M1.6665 10.3333L2.99984 9" stroke="#013871" stroke-linecap="round" />
+                                    </svg>Recently ordered items</a>
+                                <a href="account-details.html" class="nav-link" data-target="account"><svg
+                                        class="sidebar-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M4.38505 10.3211C3.44187 10.8827 0.96891 12.0294 2.47511 13.4644C3.21087 14.1653 4.03033 14.6667 5.06058 14.6667H10.9394C11.9697 14.6667 12.7891 14.1653 13.5249 13.4644C15.0311 12.0294 12.5581 10.8827 11.615 10.3211C9.40321 9.00409 6.59679 9.00409 4.38505 10.3211Z"
+                                            stroke="#013871" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M11 4.33333C11 5.99018 9.65685 7.33333 8 7.33333C6.34315 7.33333 5 5.99018 5 4.33333C5 2.67647 6.34315 1.33333 8 1.33333C9.65685 1.33333 11 2.67647 11 4.33333Z"
+                                            stroke="#013871" />
+                                    </svg>Account</a>
+                                <a href="account-statement.html" class="nav-link" data-target="download"><svg
+                                        class="sidebar-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M14.0002 5.55556C13.3834 4.68777 12.5766 4 11.319 4C5.64556 4 8.61308 13.6667 3.3335 13.6667"
+                                            stroke="#013871" stroke-linecap="round" />
+                                        <path
+                                            d="M14 14H6.66667C4.46678 14 3.36683 14 2.68342 13.3166C2 12.6332 2 11.5332 2 9.33333V2"
+                                            stroke="#013871" stroke-linecap="round" />
+                                    </svg>Download accounts statement</a>
+
+                                
+                            </div>
+                        
+
+                    </div>
+
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="col-md-10">
+                <div class="main">
+
+                    <!-- Top Navbar Start -->
+                    <nav class="dashboard.top-nav navbar navbar-expand px-3  border-bottom">
+                        <div class="user-welcome">
+                            <h3 class="user-welcome-heading">Good Morning, Jonathan!</h3>
+                            <span>Company</span>
+                            <p class="account-details">Here is how your account looks today</p>
+                        </div>
+                        <div class="ms-auto d-flex">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link d-none d-md-block" href="#"><img src="assets/icons/bell.svg"
+                                            alt=""> </a>
+                                </li>
+
+                                <!-- New Code start-->
+                                <div class="d-flex justify-content-end d-none d-md-block">
+                                    <div class="dropdown">
+                                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <a class="" href="#">
+                                                <img class="user_img" src="assets/images/sample_avatar_mo_taungw.png">
+                                            </a>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                            <li class="mb-3">
+                                                <a class="dropdown-item" href="#"><img class="me-2" src="assets/images/sample_avatar_mo_taungw.png" alt="">Jonathan Smith</a>
+                                            </li>
+                                            <hr class="mx-3">
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <img class="mb-1 me-2" src="assets/icons/logout.svg" alt="">
+                                                    Log Out
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- new code End -->
+                                
+                            </ul>
+                        </div>
+                    </nav>
+                    <!-- Top Navbar End -->
+
+                    <!-- Main DashBoard Start -->
+                    <div class="row px-2">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 g-2">
+                            <div class="dashboard-card d-flex align-items-center p-md-2 p-3">
+                                <div>
+                                    <img src="assets/icons/top-products.svg" alt="">
+                                </div>
+
+                                <div class="card-text">
+                                    <h4>Total products</h4>
+                                    <p>250</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 g-2">
+                            <div class="dashboard-card d-flex align-items-center px-md-0 p-md-2 p-3">
+                                <div>
+                                    <img src="assets/icons/completed-order.svg" alt="">
+                                </div>
+
+                                <div class="card-text">
+                                    <h4>Completed order</h4>
+                                    <p>124</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 g-2">
+                            <div class="dashboard-card d-flex align-items-center p-md-2 p-3">
+                                <div>
+                                    <img src="assets/icons/canceled-orders.svg" alt="">
+                                </div>
+
+                                <div class="card-text">
+                                    <h4>Cancel order</h4>
+                                    <p>14</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 g-2">
+                            <div class="dashboard-card d-flex align-items-center p-md-2 p-3">
+                                <div>
+                                    <img src="assets/icons/top-products.svg" alt="">
+                                </div>
+
+                                <div class="card-text">
+                                    <h4>Top products</h4>
+                                    <p>119</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BANNER SECTION -->
+
+                    <div class="row px-2">
+                        <div class="col-lg-8 mb-0 g-2 m-0">
+                            <div class="container my-4 mt-0 g-0">
+                                <div class="row rounded-4  banner-section">
+                                    <!-- Left Section: Discount and Promo -->
+                                    <div class="col-md-5 my-4">
+                                        <div class="promo-box p-4 pe-0 ps-3">
+                                            <p class="text-muted mb-1">For ONLINE Order</p>
+                                            <h2 class="">30% OFF</h2>
+                                            <p class="m-0">Promocode: <span>ORDERSALE</span></p>
+                                        </div>
+                                    </div>
+                            
+                                    <!-- Right Section: Text and Image -->
+                                    <div class="col-md-4 col-6 custom-col d-flex ps-md-0 ps-4 ">
+                                        <!-- Centered Text -->
+                                        <div class="text-primary mt-md-5">
+                                            <p class="just mb-0">JUST</p>
+                                            <p class="for mb-0">FOR</p>
+                                            <p class="you mb-0">YOU</p>
+                                        </div>
+                                        <!-- Image with Circle Background -->
+                                       
+                                    </div>
+                                    <div class="col-md-3 col-6 custom-col d-flex justify-content-between align-items-center">
+                                        <div class="banner-section-image position-relative">
+                                            <div class="circle-background"></div>
+                                            <img src="assets/images/image 18.png" alt="Smiling Baby" class="position-relative d-flex align-items-end" style="width: 100;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4 px-1">
+                            <div class="banner-carousel dashboard-card p-0">
+                                <div class="top-ordered-products">
+                                    <h6 class="px-2">
+                                        Top ordered product categories
+                                    </h6>
+
+                                    <div id="myCarousel" class="carousel slide container my-3" data-bs-ride="carousel">
+                                        <div class="carousel-inner  g-0">
+                                            <div class="carousel-item active">
+                                                <div class="col-sm-6 col-12">
+                                                    <div class="card card-body rounded-4">
+                                                        <img class="img-fluid" src="assets/images/frak.png">
+                                                        <p>Summer Skirts</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <div class="col-sm-6 col-12 p-0 g-0 ">
+                                                    <div class="card card-body rounded-4">
+                                                        <img class="img-fluid w-100" src="assets/images/trouserpng.png">
+                                                        <p>Jeans & Trousers</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="carousel-item">
+                                                <div class="col-sm-6 col-12">
+                                                    <div class="card card-body rounded-4">
+                                                        <img class="img-fluid" src="assets/images/frak.png">
+                                                        <p>Summer Skirts</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="carousel-item">
+                                                <div class="col-sm-6 col-12">
+                                                    <div class="card card-body rounded-4">
+                                                        <img class="img-fluid" src="assets/images/trouserpng.png">
+                                                        <p>Jeans & Trousers</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <button class="carousel-control-prev" type="button"
+                                                data-bs-target="#myCarousel" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"><img
+                                                        src="assets/icons/arow-left.svg" alt=""></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button"
+                                                data-bs-target="#myCarousel" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"><img
+                                                        src="assets/icons/arow-right.svg" alt=""></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="px-2">
+                            <div class="row g-2">
+                                <div class="col-md-8 ">
+                                    <div class="orders-table p-3 d-none d-md-block">
+                                        <h5>Your Recent Orders</h5>
+                                        <ul class="nav nav-pills mb-3 ">
+                                            <li>
+                                                <a class="nav-link active" href="#">7d</a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link" href="#">1m</a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link" href="#">3m</a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link" href="#">6m</a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link" href="#">All</a>
+                                            </li>
+
+
+                                            <div class="d-flex ms-auto">
+                                                <li>
+                                                    <div class="dropdown-center">
+                                                        <button class="btn btn-outline dropdown-toggle rounded-3"
+                                                            type="button" data-bs-toggle="dropdown"
+                                                            aria-expanded="false">
+                                                            Order Status
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#">In Stock</a></li>
+                                                            <li><a class="dropdown-item" href="#">Cancelled</a></li>
+                                                            <li><a class="dropdown-item" href="#">Delivered</a></li>
+                                                            <li><a class="dropdown-item" href="#">Progress</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <div class="search-bar mx-2">
+                                                    <input type="text" placeholder="Search">
+                                                    <img src="assets/icons/search.svg" alt="Search-icon">
+                                                </div>
+                                                </li>
+
+                                            </div>
+
+
+                                        </ul>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+
+                                                    <tr>
+                                                        <th>Order ID</th>
+                                                        <th>Item</th>
+                                                        <th>Date</th>
+                                                        <th>Price</th>
+                                                        <th>Status</th>
+                                                        <th>Platform</th>
+                                                    </tr>
+
+
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>CTG0291</td>
+                                                        <td>Crop top pants</td>
+                                                        <td>12/02/2022</td>
+                                                        <td>$599</td>
+                                                        <td class="text-success">Paid</td>
+                                                        <td><span class="badge instoke ">In Stock</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>CTG0291</td>
+                                                        <td>Crop top pants</td>
+                                                        <td>12/02/2022</td>
+                                                        <td>$599</td>
+                                                        <td class="text-warning">Pending</td>
+                                                        <td><span class="badge Cancelled">Cancelled</span></td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>CTG0291</td>
+                                                        <td>Crop top pants</td>
+                                                        <td>12/02/2022</td>
+                                                        <td>$599</td>
+                                                        <td class="text-success">Paid</td>
+                                                        <td><span class="badge Delivered">Delivered</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>CTG0291</td>
+                                                        <td>Crop top pants</td>
+                                                        <td>12/02/2022</td>
+                                                        <td>$599</td>
+                                                        <td class="text-success">Paid</td>
+                                                        <td><span class="badge Progress">Progress</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <div class="pagination-row">
+                                                <nav aria-label="Page navigation example">
+                                                    <ul class="pagination d-flex justify-content-evenly">
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#" aria-label="Previous">
+                                                                <span aria-hidden="true"><img
+                                                                        src="assets/icons/arow-left.svg" alt=""></span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                        <li class="page-item active"><a class="page-link  pb-2"
+                                                                href="#">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                <span aria-hidden="true"><img
+                                                                        src="assets/icons/arow-right.svg" alt=""></span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="container sm-orders-table d-md-none p-0 m-0">
+                                        <h5>Your Recent Orders</h5>
+
+
+                                        <!-- Filters -->
+
+                                        <div class=" d-flex justify-content-between align-items-center mt-3"
+                                            role="group" aria-label="Time range filters">
+                                            <button type="button" class="btn Filters-btn ">1d</button>
+                                            <button type="button" class="btn  btn-active rounded-3">7d</button>
+                                            <button type="button" class="btn Filters-btn ">1m</button>
+                                            <button type="button" class="btn Filters-btn ">3m</button>
+                                            <button type="button" class="btn Filters-btn ">6m</button>
+                                            <button type="button" class="btn Filters-btn ">All</button>
+                                        </div>
+                                        <!-- Search and status filter -->
+
+
+                                        <div class="d-flex mt-3">
+                                            <input class="form-control me-2" type="search" placeholder="Search"
+                                                aria-label="Search">
+                                            <select class="form-select">
+                                                <option selected>Order status</option>
+                                                <option value="1">Paid</option>
+                                                <option value="2">Unpaid</option>
+                                                <option value="3">Shipped</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Order Cards -->
+                                        <div class="row mt-3 ">
+                                            <div class="col-md-12  mb-3 p-0">
+                                                <div class="card rounded-4">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Order ID</p>
+                                                                <a href="">
+                                                                    <h6> CTG0921</h6>
+                                                                </a>
+
+                                                            </div>
+
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Item</p>
+                                                                <h6>Crop top pants</h6>
+                                                            </div>
+
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Date</p>
+                                                                <h6>12/02/2022</h6>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mt-3">
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Price</p>
+                                                                <h6>$599</h6>
+                                                            </div>
+
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Payment status</p>
+                                                                <h6 class="text-success">Paid</h6>
+                                                            </div>
+
+                                                            <div class="col-3">
+                                                                <p class="mb-2">Status</p>
+                                                                <h6 class="badge sm rounded-4">In Stock</h6>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+
+                                                <div class="card rounded-4 mt-3">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Order ID</p>
+                                                                <a href="">
+                                                                    <h6> CTG0921</h6>
+                                                                </a>
+                                                            </div>
+
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Item</p>
+                                                                <h6>Crop top pants</h6>
+                                                            </div>
+
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Date</p>
+                                                                <h6>12/02/2022</h6>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mt-3">
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Price</p>
+                                                                <h6>$599</h6>
+                                                            </div>
+
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Payment status</p>
+                                                                <h6 class="text-success">Paid</h6>
+                                                            </div>
+
+                                                            <div class="col-3">
+                                                                <p class="mb-2">Status</p>
+                                                                <h6 class="badge sm rounded-4">In Stock</h6>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+
+                                                <div class="card rounded-4 mt-3">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Order ID</p>
+                                                                <a href="">
+                                                                    <h6> CTG0921</h6>
+                                                                </a>
+                                                            </div>
+
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Item</p>
+                                                                <h6>Crop top pants</h6>
+                                                            </div>
+
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Date</p>
+                                                                <h6>12/02/2022</h6>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mt-3">
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Price</p>
+                                                                <h6>$599</h6>
+                                                            </div>
+
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Payment status</p>
+                                                                <h6 class="text-success">Paid</h6>
+                                                            </div>
+
+                                                            <div class="col-3">
+                                                                <p class="mb-2">Status</p>
+                                                                <h6 class="badge sm rounded-4">In Stock</h6>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="card rounded-4 mt-3">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Order ID</p>
+                                                                <a href="">
+                                                                    <h6> CTG0921</h6>
+                                                                </a>
+                                                            </div>
+
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Item</p>
+                                                                <h6>Crop top pants</h6>
+                                                            </div>
+
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Date</p>
+                                                                <h6>12/02/2022</h6>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mt-3">
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Price</p>
+                                                                <h6>$599</h6>
+                                                            </div>
+
+                                                            <div class="col-4">
+                                                                <p class="mb-2">Payment status</p>
+                                                                <h6 class="text-success">Paid</h6>
+                                                            </div>
+
+                                                            <div class="col-3">
+                                                                <p class="mb-2">Status</p>
+                                                                <h6 class="badge sm rounded-4">In Stock</h6>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pagination-row mb-4">
+                                                <nav aria-label="Page navigation example">
+                                                    <ul
+                                                        class="pagination-sm d-flex justify-content-between list-unstyled">
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#" aria-label="Previous">
+                                                                <span aria-hidden="true"><img
+                                                                        src="assets/icons/arow-left.svg" alt=""></span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                        <li class="page-item active"><a class="page-link" href="#">2</a>
+                                                        </li>
+                                                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                <span aria-hidden="true"><img
+                                                                        src="assets/icons/arow-right.svg" alt=""></span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+
+                                        <!-- Pagination -->
+
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4 mb-4 px-1">
+                                    <div class="bottom-carousel rounded-4 text-left p-3">
+                                        <h5>Congrats</h5>
+                                        <p>Some of your products already have the highest buyers</p>
+                                        <!-- Carousel -->
+                                        <!-- <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="assets/images/carousel2 img 1.png" class="d-block w-100"
+                                                        alt="Product 1">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                        <div class="content">
+                                                            <h5>Limasso Gray</h5>
+                                                            <p>3000 €</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="assets/images/carousel2 img 1.png" class="d-block w-100"
+                                                        alt="Product 2">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                        <div class="content">
+                                                            <h5>Limasso Gray</h5>
+                                                            <p>3000 €</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="carousel-item">
+                                                    <img src="assets/images/carousel2 img 1.png" class="d-block w-100"
+                                                        alt="Product 2">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                        <div class="content">
+                                                            <h5>Limasso Gray</h5>
+                                                            <p>3000 €</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button"
+                                                data-bs-target="#productCarousel" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"><img
+                                                        src="assets/icons/Vector.png" alt=""></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button"
+                                                data-bs-target="#productCarousel" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"><img
+                                                        src="assets/icons/VectorNext.png" alt=""></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div> -->
+                                        <div class="swiper mySwiper">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img class="rounded-4"
+                                                        src="https://img.freepik.com/premium-photo/warm-fashionable-embrace-winter-with-wool-sweaters_984027-9589.jpg" />
+                                                    <div class="product-info">
+                                                        <h5>Product 1</h5>
+                                                        <p class="price">3000 ₽</p>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img class="rounded-4"
+                                                        src="https://img.freepik.com/free-photo/black-front-sweater_125540-764.jpg?size=626&ext=jpg" />
+                                                    <div class="product-info">
+                                                        <h5>Product 2</h5>
+                                                        <p class="price">3000 ₽</p>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img class="rounded-4"
+                                                        src="https://img.freepik.com/free-photo/pink-sweater-front_125540-746.jpg" />
+                                                    <div class="product-info">
+                                                        <h5>Product 3</h5>
+                                                        <p class="price">3000 ₽</p>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img class="rounded-4"
+                                                        src="https://img.freepik.com/free-photo/green-front-sweater_125540-746.jpg" />
+                                                    <div class="product-info">
+                                                        <h5>Product 4</h5>
+                                                        <p class="price">3000 ₽</p>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img class="rounded-4"
+                                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo5s0S8TqHnM6tdzzfjqCc5EoQECrwmPaOtg&s" />
+                                                    <div class="product-info">
+                                                        <h5>Product 5</h5>
+                                                        <p class="price">3000 ₽</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-button-prev slider-arrow">
+                                                <span class="icon material-symbols-outlined">arrow_back</span>
+                                            </div>
+                                            <div class="swiper-button-next slider-arrow">
+                                                <span class="icon material-symbols-outlined">arrow_forward</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+
+<script>
+    $(document).ready(function() {
+  // Swiper Initialization
+  var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    centeredSlides: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
+    loop: true,
+    slidesPerView: "2",
+    coverflowEffect: {
+      rotate: 0,
+      depth: 100,
+      modifier: 2,
+      slideShadows: true
+    },
+    navigation: {
+      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next"
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: false
+    }
+  });
+
+  // Carousel Initialization
+  $('.top-ordered-products .carousel .carousel-item').each(function () {
+    var minPerSlide = 4;
+    var next = $(this).next();
+    if (!next.length) {
+      next = $(this).siblings(':first');
+    }
+    if (!next.hasClass('carousel-control-prev') && !next.hasClass('carousel-control-next')) {
+      next.children(':first-child').clone().appendTo($(this));
+    }
+
+    for (var i = 0; i < minPerSlide; i++) {
+      next = next.next();
+      if (!next.length) {
+        next = $(this).siblings(':first');
+      }
+      if (!next.hasClass('carousel-control-prev') && !next.hasClass('carousel-control-next')) {
+        next.children(':first-child').clone().appendTo($(this));
+      }
+    }
+  });
+});
+
+</script>
+</body>
+
+</html>
